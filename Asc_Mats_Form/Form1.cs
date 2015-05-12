@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Asc_Mats_Form
@@ -25,14 +20,7 @@ namespace Asc_Mats_Form
 
         public void initializePanels()
         {
-            // Create and initialize a GroupBox and a Button control.
-            //Button button1 = new Button();
-            //button1.Location = new Point(20, 10);
-
-            // Set the FlatStyle of the GroupBox.
-            //gb_wood.FlatStyle = FlatStyle.Flat;
-
-            // Add the Button to the GroupBox.
+            Color blue = Color.FromName("CadetBlue");
             List<int> wl = new List<int> { 0, 1, 2, 2, 3, 4, 4, 5, 6, 6, 7 };
             List<int> ml = wl;
             ml.Add(7);
@@ -49,6 +37,10 @@ namespace Asc_Mats_Form
             List<TextBox> clothBoxes = new List<TextBox> { this.i_cloth_asc, this.i_cloth_to, this.i_cloth_toc, this.i_cloth_tw, this.i_cloth_twc, this.i_cloth_tt, this.i_cloth_ttc };
             List<TextBox> metalBoxes = new List<TextBox> { this.i_metal_asc, this.i_metal_to, this.i_metal_toc, this.i_metal_twc, this.i_metal_tt, this.i_metal_ttc, this.i_metal_ao, i_metal_at };
             List<TextBox> leatherBoxes = new List<TextBox> { this.i_leather_asc, this.i_leather_to, this.i_leather_toc, this.i_leather_tw, this.i_leather_twc, this.i_leather_tt, this.i_leather_ttc };
+            button_calc.BackColor = blue;
+            button_reset.BackColor = blue;
+            button_save.BackColor = blue;
+            button_load.BackColor = blue;
             wood wood = new wood();
             cloth cloth = new cloth();
             metal metal = new metal();
@@ -59,29 +51,22 @@ namespace Asc_Mats_Form
                 cloth.setLabel(clothLabels[i], wl[i]);
                 leather.setLabel(leatherLabels[i], wl[i]);
             }
-
-            foreach (var item in woodLabels)
-            {
-                pan_wood.Controls.Add(item);
-            }
-            foreach (var item in woodBoxes)
-            {
-                pan_wood.Controls.Add(item);
-            }
-
-            foreach (var item in clothLabels)
-            {
-                pan_cloth.Controls.Add(item);
-            }
-            foreach (var item in clothBoxes)
-            {
-                pan_cloth.Controls.Add(item);
-            }
-
-            foreach (var item in metalBoxes)
-            {
-                pan_metal.Controls.Add(item);
-            }
+            woodLabels.ForEach(s =>
+                {
+                    pan_wood.Controls.Add(s);
+                });
+            woodBoxes.ForEach(s =>
+                {
+                    pan_wood.Controls.Add(s);
+                });
+            clothLabels.ForEach(s =>
+                {
+                    pan_cloth.Controls.Add(s);
+                });
+            clothBoxes.ForEach(s =>
+                {
+                    pan_cloth.Controls.Add(s);
+                });
             int c = 0;
             for (int j = 6; j < 18; j++, c++)
             {
@@ -89,21 +74,22 @@ namespace Asc_Mats_Form
             }
             label56.Text = label19.Text + "s";
             label58.Text = label16.Text + "s";
-            foreach (var item in metalLabels)
-            {
-                pan_metal.Controls.Add(item);
-            }
-
-            foreach (var item in leatherLabels)
-            {
-                pan_leather.Controls.Add(item);
-            }
-
-            foreach (var item in leatherBoxes)
-            {
-                pan_leather.Controls.Add(item);
-            }
-
+            metalLabels.ForEach(s =>
+                {
+                    pan_metal.Controls.Add(s);
+                });
+            metalBoxes.ForEach(s =>
+                {
+                    pan_metal.Controls.Add(s);
+                });
+            leatherLabels.ForEach(s =>
+                {
+                    pan_leather.Controls.Add(s);
+                });
+            leatherBoxes.ForEach(s =>
+                {
+                    pan_leather.Controls.Add(s);
+                });
             pan_wood.Controls.Add(but_pl_wood);
             pan_wood.Controls.Add(but_min_wood);
             pan_cloth.Controls.Add(but_pl_cloth);
@@ -112,7 +98,6 @@ namespace Asc_Mats_Form
             pan_metal.Controls.Add(but_min_metal);
             pan_leather.Controls.Add(but_pl_leather);
             pan_leather.Controls.Add(but_min_leather);
-
             Controls.Add(pan_wood);
             Controls.Add(pan_cloth);
             Controls.Add(pan_metal);
@@ -168,22 +153,11 @@ namespace Asc_Mats_Form
 
         public string[] contents = new string[29];
 
-        //private void callTextBox(Control.ControlCollection cc)
-        //{
-        //    foreach (Control ctrl in cc)
-        //    {
-        //        TextBox tb = ctrl as TextBox;
-        //    }
-        //}
-
         public void button_save_Click(object sender, EventArgs e)
         {
             DialogResult Result = saveFileDialog1.ShowDialog();
             if ((Result == DialogResult.OK) && (saveFileDialog1.FileName.Length > 0))
             {
-                //{
-                //    callTextBox(this.Controls);
-                //}
                 contents[0] = i_wood_asc.Text;
                 contents[1] = i_wood_to.Text;
                 contents[2] = i_wood_toc.Text;
@@ -330,31 +304,27 @@ namespace Asc_Mats_Form
 
         private void i_wood_asc_TextChanged(object sender, EventArgs e)
         {
-            foreach (Control c in pan_wood.Controls)
-            {
-                c.Enabled = true;
-            }
+            onChange(pan_wood);
         }
 
         private void i_cloth_asc_TextChanged(object sender, EventArgs e)
         {
-            foreach (Control c in pan_cloth.Controls)
-            {
-                c.Enabled = true;
-            }
+            onChange(pan_cloth);
         }
 
         private void i_metal_asc_TextChanged(object sender, EventArgs e)
         {
-            foreach (Control c in pan_metal.Controls)
-            {
-                c.Enabled = true;
-            }
+            onChange(pan_metal);
         }
 
         private void i_leather_asc_TextChanged(object sender, EventArgs e)
         {
-            foreach (Control c in pan_leather.Controls)
+            onChange(pan_leather);
+        }
+
+        private void onChange(Panel p)
+        {
+            foreach (Control c in p.Controls)
             {
                 c.Enabled = true;
             }
@@ -402,7 +372,6 @@ namespace Asc_Mats_Form
         public void calc_wood()
         {
             TextBox[] woodBoxes = new TextBox[] { this.i_wood_asc, this.i_wood_to, this.i_wood_toc, this.i_wood_tw, this.i_wood_twc, this.i_wood_tt, this.i_wood_ttc };
-
             int[] woodBoxes_value = new int[] { v_wood_asc, v_wood_to, v_wood_toc, v_wood_tw, v_wood_twc, v_wood_tt, v_wood_ttc };
             for (int i = 0; i < woodBoxes.Length; i++)
             {
