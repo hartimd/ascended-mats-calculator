@@ -22,6 +22,7 @@
 
         #region Windows Form Designer generated code
 
+ 
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -29,7 +30,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.i_wood_asc = new System.Windows.Forms.TextBox();
             this.i_wood_to = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.i_wood_toc = new System.Windows.Forms.TextBox();
@@ -54,7 +54,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.i_cloth_to = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.i_cloth_asc = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.i_metal_at = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -137,6 +136,8 @@
             this.but_pl_metal = new System.Windows.Forms.Button();
             this.but_min_leather = new System.Windows.Forms.Button();
             this.but_pl_leather = new System.Windows.Forms.Button();
+            this.i_wood_asc = new System.Windows.Forms.TextBox();
+            this.i_cloth_asc = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -144,17 +145,8 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(4, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Globs of Elder Wood";
-            // 
-            // i_wood_asc
-            // 
-            this.i_wood_asc.Location = new System.Drawing.Point(122, 59);
-            this.i_wood_asc.Name = "i_wood_asc";
-            this.i_wood_asc.Size = new System.Drawing.Size(45, 20);
-            this.i_wood_asc.TabIndex = 1;
-            this.i_wood_asc.TextChanged += new System.EventHandler(this.i_wood_asc_TextChanged);
             // 
             // i_wood_to
             // 
@@ -169,9 +161,8 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(4, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Soft Wood Log";
             // 
             // i_wood_toc
             // 
@@ -186,9 +177,8 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(4, 108);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Soft Wood Plank";
             // 
             // i_wood_tw
             // 
@@ -203,9 +193,8 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(4, 132);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Seasoned Wood Log";
             // 
             // i_wood_tt
             // 
@@ -220,9 +209,8 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(4, 181);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 13);
+            this.label6.Size = new System.Drawing.Size(0, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Hard Wood Log";
             // 
             // i_wood_twc
             // 
@@ -237,9 +225,8 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(4, 155);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 13);
+            this.label7.Size = new System.Drawing.Size(0, 13);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Seasoned Wood Plank";
             // 
             // i_wood_ttc
             // 
@@ -254,9 +241,8 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(4, 207);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 13);
+            this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Hard Wood Plank";
             // 
             // i_cloth_ttc
             // 
@@ -271,9 +257,8 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(209, 207);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 13);
+            this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 28;
-            this.label8.Text = "Bolt of Linen";
             // 
             // i_cloth_twc
             // 
@@ -288,9 +273,8 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(209, 155);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 13);
+            this.label9.Size = new System.Drawing.Size(0, 13);
             this.label9.TabIndex = 26;
-            this.label9.Text = "Bolt of Wool";
             // 
             // i_cloth_tt
             // 
@@ -305,9 +289,8 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(209, 181);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.Size = new System.Drawing.Size(0, 13);
             this.label10.TabIndex = 24;
-            this.label10.Text = "Linen Scrap";
             // 
             // i_cloth_tw
             // 
@@ -322,9 +305,8 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(209, 132);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 13);
+            this.label11.Size = new System.Drawing.Size(0, 13);
             this.label11.TabIndex = 22;
-            this.label11.Text = "Cotton Scrap";
             // 
             // i_cloth_toc
             // 
@@ -339,9 +321,8 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(209, 108);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 13);
+            this.label12.Size = new System.Drawing.Size(0, 13);
             this.label12.TabIndex = 20;
-            this.label12.Text = "Bolt of Wool";
             // 
             // i_cloth_to
             // 
@@ -356,26 +337,16 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(209, 85);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 13);
+            this.label13.Size = new System.Drawing.Size(0, 13);
             this.label13.TabIndex = 18;
-            this.label13.Text = "Wool Scrap";
-            // 
-            // i_cloth_asc
-            // 
-            this.i_cloth_asc.Location = new System.Drawing.Point(289, 59);
-            this.i_cloth_asc.Name = "i_cloth_asc";
-            this.i_cloth_asc.Size = new System.Drawing.Size(45, 20);
-            this.i_cloth_asc.TabIndex = 17;
-            this.i_cloth_asc.TextChanged += new System.EventHandler(this.i_cloth_asc_TextChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(209, 62);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 13);
+            this.label14.Size = new System.Drawing.Size(0, 13);
             this.label14.TabIndex = 16;
-            this.label14.Text = "Spool of Silk";
             // 
             // i_metal_at
             // 
@@ -390,9 +361,8 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(390, 207);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 13);
+            this.label15.Size = new System.Drawing.Size(0, 13);
             this.label15.TabIndex = 42;
-            this.label15.Text = "Lump of Primordium";
             // 
             // i_metal_twc
             // 
@@ -407,9 +377,8 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(390, 155);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 13);
+            this.label16.Size = new System.Drawing.Size(0, 13);
             this.label16.TabIndex = 40;
-            this.label16.Text = "Steel Ingot";
             // 
             // i_metal_tt
             // 
@@ -424,9 +393,8 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(390, 181);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 13);
+            this.label17.Size = new System.Drawing.Size(0, 13);
             this.label17.TabIndex = 38;
-            this.label17.Text = "Platinum Ore";
             // 
             // i_metal_ao
             // 
@@ -441,9 +409,8 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(390, 132);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(69, 13);
+            this.label18.Size = new System.Drawing.Size(0, 13);
             this.label18.TabIndex = 36;
-            this.label18.Text = "Lump of Coal";
             // 
             // i_metal_toc
             // 
@@ -458,9 +425,8 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(390, 108);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(52, 13);
+            this.label19.Size = new System.Drawing.Size(0, 13);
             this.label19.TabIndex = 34;
-            this.label19.Text = "Iron Ingot";
             // 
             // i_metal_to
             // 
@@ -475,9 +441,8 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(390, 85);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(45, 13);
+            this.label20.Size = new System.Drawing.Size(0, 13);
             this.label20.TabIndex = 32;
-            this.label20.Text = "Iron Ore";
             // 
             // i_metal_asc
             // 
@@ -492,9 +457,8 @@
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(390, 62);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(87, 13);
+            this.label21.Size = new System.Drawing.Size(0, 13);
             this.label21.TabIndex = 30;
-            this.label21.Text = "Lump of Mitrillium";
             // 
             // i_leather_ttc
             // 
@@ -509,9 +473,8 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(618, 207);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(121, 13);
+            this.label22.Size = new System.Drawing.Size(0, 13);
             this.label22.TabIndex = 56;
-            this.label22.Text = "Rugged Leather Square";
             // 
             // i_leather_twc
             // 
@@ -526,9 +489,8 @@
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(618, 155);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(116, 13);
+            this.label23.Size = new System.Drawing.Size(0, 13);
             this.label23.TabIndex = 54;
-            this.label23.Text = "Coarse Leather Square";
             // 
             // i_leather_tt
             // 
@@ -543,9 +505,8 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(618, 181);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(123, 13);
+            this.label24.Size = new System.Drawing.Size(0, 13);
             this.label24.TabIndex = 52;
-            this.label24.Text = "Rugged Leather Section";
             // 
             // i_leather_tw
             // 
@@ -560,9 +521,8 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(618, 132);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(118, 13);
+            this.label25.Size = new System.Drawing.Size(0, 13);
             this.label25.TabIndex = 50;
-            this.label25.Text = "Coarse Leather Section";
             // 
             // i_leather_toc
             // 
@@ -577,9 +537,8 @@
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(618, 108);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(104, 13);
+            this.label26.Size = new System.Drawing.Size(0, 13);
             this.label26.TabIndex = 48;
-            this.label26.Text = "Thin Leather Square";
             // 
             // i_leather_to
             // 
@@ -594,9 +553,8 @@
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(618, 85);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(106, 13);
+            this.label27.Size = new System.Drawing.Size(0, 13);
             this.label27.TabIndex = 46;
-            this.label27.Text = "Thin Leather Section";
             // 
             // i_leather_asc
             // 
@@ -611,18 +569,16 @@
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(618, 62);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(71, 13);
+            this.label28.Size = new System.Drawing.Size(0, 13);
             this.label28.TabIndex = 44;
-            this.label28.Text = "Spool of Cord";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(4, 257);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(79, 13);
+            this.label29.Size = new System.Drawing.Size(0, 13);
             this.label29.TabIndex = 58;
-            this.label29.Text = "Soft Wood Log";
             // 
             // o_wood_to
             // 
@@ -649,9 +605,8 @@
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(4, 287);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(83, 13);
+            this.label32.Size = new System.Drawing.Size(0, 13);
             this.label32.TabIndex = 60;
-            this.label32.Text = "Hard Wood Log";
             // 
             // o_wood_tw
             // 
@@ -668,9 +623,8 @@
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(4, 272);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(108, 13);
+            this.label34.Size = new System.Drawing.Size(0, 13);
             this.label34.TabIndex = 62;
-            this.label34.Text = "Seasoned Wood Log";
             // 
             // o_cloth_tw
             // 
@@ -685,11 +639,10 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(210, 272);
+            this.label36.Location = new System.Drawing.Point(209, 272);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(69, 13);
+            this.label36.Size = new System.Drawing.Size(0, 13);
             this.label36.TabIndex = 68;
-            this.label36.Text = "Cotton Scrap";
             // 
             // o_cloth_tt
             // 
@@ -706,9 +659,8 @@
             this.label38.AutoSize = true;
             this.label38.Location = new System.Drawing.Point(209, 287);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(64, 13);
+            this.label38.Size = new System.Drawing.Size(0, 13);
             this.label38.TabIndex = 66;
-            this.label38.Text = "Linen Scrap";
             // 
             // o_cloth_to
             // 
@@ -725,14 +677,13 @@
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(209, 257);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(63, 13);
+            this.label40.Size = new System.Drawing.Size(0, 13);
             this.label40.TabIndex = 64;
-            this.label40.Text = "Wool Scrap";
             // 
             // o_leather_tw
             // 
             this.o_leather_tw.AutoSize = true;
-            this.o_leather_tw.Location = new System.Drawing.Point(748, 272);
+            this.o_leather_tw.Location = new System.Drawing.Point(749, 272);
             this.o_leather_tw.MaximumSize = new System.Drawing.Size(50, 0);
             this.o_leather_tw.MinimumSize = new System.Drawing.Size(50, 0);
             this.o_leather_tw.Name = "o_leather_tw";
@@ -744,9 +695,8 @@
             this.label42.AutoSize = true;
             this.label42.Location = new System.Drawing.Point(618, 272);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(118, 13);
+            this.label42.Size = new System.Drawing.Size(0, 13);
             this.label42.TabIndex = 74;
-            this.label42.Text = "Coarse Leather Section";
             // 
             // o_leather_tt
             // 
@@ -761,11 +711,10 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(619, 287);
+            this.label44.Location = new System.Drawing.Point(618, 287);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(123, 13);
+            this.label44.Size = new System.Drawing.Size(0, 13);
             this.label44.TabIndex = 72;
-            this.label44.Text = "Rugged Leather Section";
             // 
             // o_leather_to
             // 
@@ -780,11 +729,10 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(619, 257);
+            this.label46.Location = new System.Drawing.Point(618, 257);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(106, 13);
+            this.label46.Size = new System.Drawing.Size(0, 13);
             this.label46.TabIndex = 70;
-            this.label46.Text = "Thin Leather Section";
             // 
             // o_metal_ao
             // 
@@ -799,11 +747,10 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(391, 272);
+            this.label48.Location = new System.Drawing.Point(390, 272);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(69, 13);
+            this.label48.Size = new System.Drawing.Size(0, 13);
             this.label48.TabIndex = 80;
-            this.label48.Text = "Lump of Coal";
             // 
             // o_metal_tt
             // 
@@ -820,9 +767,8 @@
             this.label50.AutoSize = true;
             this.label50.Location = new System.Drawing.Point(390, 287);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(67, 13);
+            this.label50.Size = new System.Drawing.Size(0, 13);
             this.label50.TabIndex = 78;
-            this.label50.Text = "Platinum Ore";
             // 
             // o_metal_to
             // 
@@ -839,9 +785,8 @@
             this.label52.AutoSize = true;
             this.label52.Location = new System.Drawing.Point(390, 257);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(45, 13);
+            this.label52.Size = new System.Drawing.Size(0, 13);
             this.label52.TabIndex = 76;
-            this.label52.Text = "Iron Ore";
             // 
             // o_metal_at
             // 
@@ -858,9 +803,8 @@
             this.label54.AutoSize = true;
             this.label54.Location = new System.Drawing.Point(390, 301);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(99, 13);
+            this.label54.Size = new System.Drawing.Size(0, 13);
             this.label54.TabIndex = 82;
-            this.label54.Text = "Lump of Primordium";
             // 
             // o_craft_iron
             // 
@@ -877,9 +821,8 @@
             this.label56.AutoSize = true;
             this.label56.Location = new System.Drawing.Point(390, 344);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(57, 13);
+            this.label56.Size = new System.Drawing.Size(0, 13);
             this.label56.TabIndex = 84;
-            this.label56.Text = "Iron Ingots";
             // 
             // o_craft_steel
             // 
@@ -896,9 +839,8 @@
             this.label58.AutoSize = true;
             this.label58.Location = new System.Drawing.Point(390, 359);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(63, 13);
+            this.label58.Size = new System.Drawing.Size(0, 13);
             this.label58.TabIndex = 86;
-            this.label58.Text = "Steel Ingots";
             // 
             // label59
             // 
@@ -914,41 +856,41 @@
             // 
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label60.Location = new System.Drawing.Point(618, 19);
+            this.label60.Location = new System.Drawing.Point(618, 10);
+            this.label60.Margin = new System.Windows.Forms.Padding(0);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(206, 20);
+            this.label60.Size = new System.Drawing.Size(0, 20);
             this.label60.TabIndex = 89;
-            this.label60.Text = "Elonian Leather Square";
             // 
             // label61
             // 
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label61.Location = new System.Drawing.Point(390, 19);
+            this.label61.Location = new System.Drawing.Point(390, 10);
+            this.label61.Margin = new System.Windows.Forms.Padding(0);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(188, 20);
+            this.label61.Size = new System.Drawing.Size(0, 20);
             this.label61.TabIndex = 90;
-            this.label61.Text = "Deldrimor Steel Ingot";
             // 
             // label62
             // 
             this.label62.AutoSize = true;
             this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label62.Location = new System.Drawing.Point(209, 19);
+            this.label62.Location = new System.Drawing.Point(209, 10);
+            this.label62.Margin = new System.Windows.Forms.Padding(0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(139, 20);
+            this.label62.Size = new System.Drawing.Size(0, 20);
             this.label62.TabIndex = 91;
-            this.label62.Text = "Bolt of Damask";
             // 
             // label63
             // 
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label63.Location = new System.Drawing.Point(4, 19);
+            this.label63.Location = new System.Drawing.Point(5, 10);
+            this.label63.Margin = new System.Windows.Forms.Padding(0);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(159, 20);
+            this.label63.Size = new System.Drawing.Size(0, 20);
             this.label63.TabIndex = 92;
-            this.label63.Text = "Spirit Wood Plank";
             // 
             // label64
             // 
@@ -1021,11 +963,10 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(390, 233);
+            this.label30.Location = new System.Drawing.Point(390, 234);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(84, 13);
+            this.label30.Size = new System.Drawing.Size(0, 13);
             this.label30.TabIndex = 99;
-            this.label30.Text = "Dark Steel Ingot";
             // 
             // saveFileDialog1
             // 
@@ -1131,11 +1072,28 @@
             this.but_pl_leather.UseVisualStyleBackColor = true;
             this.but_pl_leather.Click += new System.EventHandler(this.but_pl_leather_Click);
             // 
+            // i_wood_asc
+            // 
+            this.i_wood_asc.Location = new System.Drawing.Point(122, 59);
+            this.i_wood_asc.Name = "i_wood_asc";
+            this.i_wood_asc.Size = new System.Drawing.Size(45, 20);
+            this.i_wood_asc.TabIndex = 1;
+            this.i_wood_asc.TextChanged += new System.EventHandler(this.i_wood_asc_TextChanged);
+            // 
+            // i_cloth_asc
+            // 
+            this.i_cloth_asc.Location = new System.Drawing.Point(289, 59);
+            this.i_cloth_asc.Name = "i_cloth_asc";
+            this.i_cloth_asc.Size = new System.Drawing.Size(45, 20);
+            this.i_cloth_asc.TabIndex = 17;
+            this.i_cloth_asc.TextChanged += new System.EventHandler(this.i_cloth_asc_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 385);
+            this.Controls.Add(this.i_wood_asc);
             this.Controls.Add(this.but_min_leather);
             this.Controls.Add(this.but_pl_leather);
             this.Controls.Add(this.but_min_metal);
@@ -1241,7 +1199,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.i_wood_to);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.i_wood_asc);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MinimumSize = new System.Drawing.Size(45, 38);
@@ -1255,7 +1212,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox i_wood_asc;
         private System.Windows.Forms.TextBox i_wood_to;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox i_wood_toc;
@@ -1280,7 +1236,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox i_cloth_to;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox i_cloth_asc;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox i_metal_at;
         private System.Windows.Forms.Label label15;
@@ -1363,6 +1318,8 @@
         private System.Windows.Forms.Button but_pl_metal;
         private System.Windows.Forms.Button but_min_leather;
         private System.Windows.Forms.Button but_pl_leather;
+        private System.Windows.Forms.TextBox i_wood_asc;
+        private System.Windows.Forms.TextBox i_cloth_asc;
     }
 }
 
