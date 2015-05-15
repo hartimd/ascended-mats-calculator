@@ -1,9 +1,11 @@
+C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\bin\Debug\Asc_Mats_Form.exe.config
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\bin\Debug\Asc_Mats_Form.exe
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\bin\Debug\Asc_Mats_Form.pdb
-C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\bin\Debug\Asc_Mats_Form.exe.config
+C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\bin\Debug\Newtonsoft.Json.dll
+C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\bin\Debug\Newtonsoft.Json.xml
+C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\Asc_Mats_Form.Form1.resources
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\Asc_Mats_Form.Properties.Resources.resources
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\Asc_Mats_Form.csproj.GenerateResource.Cache
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\Asc_Mats_Form.exe
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\Asc_Mats_Form.pdb
-C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\Asc_Mats_Form.Form1.resources
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\Asc_Mats_Form.csprojResolveAssemblyReference.cache
