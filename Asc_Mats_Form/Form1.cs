@@ -2,35 +2,109 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
+using System.Linq;
 using System.Net;
+using System.Resources;
 using System.Windows.Forms;
 
-namespace Asc_Mats_Form
+namespace AscendedMaterialsForm
 {
     public partial class Form1 : Form
     {
-        public static Size buttonstandard = new Size(20, 20);
+        private ResourceManager rm;
+        private CultureInfo cul;
 
-        public static Font header = new Font("Microsoft Sans Serif", 12.25F, FontStyle.Bold);
+        private void switchLanguage(string lang)
+        {
+            cul = CultureInfo.CreateSpecificCulture(lang);
+        }
 
-        public static Size labelFirstStandard = new Size(115, textboxStandard.Height);
+        private void checkChanged()
+        {
+            if (rad_english.Checked)
+            {
+                switchLanguage("en-US");
+            }
+            else if (rad_german.Checked)
+            {
+                switchLanguage("de-DE");
+            }
+            else if (rad_french.Checked)
+            {
+                switchLanguage("fr-FR");
+            }
+            else if (rad_spanish.Checked)
+            {
+                switchLanguage("es-ES");
+            }
+            else
+            {
+                switchLanguage("");
+            }
+            setLabels();
+        }
 
-        public static Size labelSecondStandard = new Size(35, textboxStandard.Height);
+        private void rad_english_CheckedChanged(object sender, System.EventArgs e)
+        {
+            checkChanged();
+        }
 
-        public static Size textboxStandard = new Size(45, 20);
+        private void rad_german_CheckedChanged(object sender, System.EventArgs e)
+        {
+            checkChanged();
+        }
 
-        public string[] contents = new string[29];
+        private void rad_french_CheckedChanged(object sender, System.EventArgs e)
+        {
+            checkChanged();
+        }
 
-        public int ti = 0;
+        private void rad_spanish_CheckedChanged(object sender, System.EventArgs e)
+        {
+            checkChanged();
+        }
 
+        private void labelText(Label[] labels, string[] texts)
+        {
+            for (int i = 0; i < labels.Length; i++)
+            {
+                labels[i].Text = @rm.GetString(texts[i], cul);
+            }
+        }
+
+        private void setLabels()
+        {
+            Label[] woodLabels = new Label[] { label_title_wood, label_i_wood_asc, label_i_wood_to, label_o_wood_to, label_i_wood_toc, label_i_wood_tw, label_o_wood_tw, label_i_wood_twc, label_i_wood_tt, label_o_wood_tt, label_i_wood_ttc };
+            string[] woodTexts = new string[] { "wood_title", "wood_asc", "wood_to", "wood_to", "wood_toc", "wood_tw", "wood_tw", "wood_twc", "wood_tt", "wood_tt", "wood_ttc" };
+            Label[] clothLabels = new Label[] { this.label_title_cloth, this.label_i_cloth_asc, this.label_i_cloth_to, this.label_o_cloth_to, this.label_i_cloth_toc, this.label_i_cloth_tw, this.label_o_cloth_tw, this.label_i_cloth_twc, this.label_i_cloth_tt, this.label_o_cloth_tt, this.label_i_cloth_ttc };
+            string[] clothTexts = new string[] { "cloth_title", "cloth_asc", "cloth_to", "cloth_to", "cloth_toc", "cloth_tw", "cloth_tw", "cloth_twc", "cloth_tt", "cloth_tt", "cloth_ttc" };
+            Label[] metalLabels = new Label[] { label_title_metal, this.label_i_metal_asc, this.label_i_metal_to, this.label_o_metal_to, this.label_i_metal_toc, this.label_craft_iron, this.label_i_metal_ao, this.label_o_metal_ao, this.label_i_metal_twc, this.label_craft_steel, this.label_i_metal_tt, this.label_o_metal_tt, this.label_i_metal_at, this.label_o_metal_at, this.label_i_metal_ttc };
+            string[] metalTexts = new string[] { "metal_title", "metal_asc", "metal_to", "metal_to", "metal_toc", "metal_toc", "metal_ao", "metal_ao", "metal_twc", "metal_twc", "metal_tt", "metal_tt", "metal_at", "metal_at", "metal_ttc" };
+            Label[] leatherLabels = new Label[] { this.label_title_leather, this.label_i_leather_asc, this.label_i_leather_to, this.label_o_leather_to, this.label_i_leather_toc, this.label_i_leather_tw, this.label_o_leather_tw, this.label_i_leather_twc, this.label_i_leather_tt, this.label_o_leather_tt, this.label_i_leather_ttc };
+            string[] leatherTexts = new string[] { "leather_title", "leather_asc", "leather_to", "leather_to", "leather_toc", "leather_tw", "leather_tw", "leather_twc", "leather_tt", "leather_tt", "leather_ttc" };
+            labelText(woodLabels, woodTexts);
+            labelText(clothLabels, clothTexts);
+            labelText(leatherLabels, leatherTexts);
+            labelText(metalLabels, metalTexts);
+            Label[] globalLabels = new Label[] { label_needed, label_storage, label_craft };
+            string[] globalTexts = new string[] { "needed", "storage", "craft" };
+            labelText(globalLabels, globalTexts);
+            rad_english.Text = rm.GetString("en_menu", cul);
+            rad_german.Text = rm.GetString("de_menu", cul);
+            rad_french.Text = rm.GetString("fr_menu", cul);
+            rad_spanish.Text = rm.GetString("es_menu", cul);
+        }
+
+        private static Size buttonstandard = new Size(20, 20);
+
+        private static Font header = new Font("Microsoft Sans Serif", 12.25F, FontStyle.Bold);
+        private string[] contents = new string[29];
+        private int ti = 0;
         public int v_cloth_asc, v_cloth_to, v_cloth_toc, v_cloth_tw, v_cloth_twc, v_cloth_tt, v_cloth_ttc;
-
         public int v_leather_asc, v_leather_to, v_leather_toc, v_leather_tw, v_leather_twc, v_leather_tt, v_leather_ttc;
-
         public int v_metal_ao, v_metal_at;
-
         public int v_metal_asc, v_metal_to, v_metal_toc, v_metal_tw, v_metal_twc, v_metal_tt, v_metal_ttc;
-
         public int v_wood_asc, v_wood_to, v_wood_toc, v_wood_tw, v_wood_twc, v_wood_tt, v_wood_ttc;
 
         private cloth cloth = new cloth();
@@ -46,30 +120,10 @@ namespace Asc_Mats_Form
         public Form1()
         {
             InitializeComponent();
+            cul = CultureInfo.CurrentCulture;
         }
 
-        //   <summary>
-        //   Saves a .txt file.
-        //   </summary>
-        //   <param name="sender">The source of the event.</param>
-        //   <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        //   private void button_save_Click(object sender, EventArgs e)
-        //   {
-        //       DialogResult Result = saveFileDialog1.ShowDialog();
-        //       if ((Result == DialogResult.OK) && (saveFileDialog1.FileName.Length > 0))
-        //       {
-        //           string[] contents = new string[23];
-        //           TextBox[] boxes = { textBox_token, textBox_recipe_item, textBox_recipe_item1, textBox_recipe_item2, textBox_mats_item, textBox_mats_item1, textBox_mats_item2, textBox_mats_item3, textBox_runestones, textBox_skillpoint, textBox_honor, textBox_obsi, textBox_totem, textBox_dust, textBox_venom, textBox_blood, textBox_bone, textBox_scale, textBox_claws, textBox_fangs, textBox_ecto, textBox_clover };
-        //           contents[0] = input;
-        //           for (int i = 1; i < 23; i++)
-        //           {
-        //               contents[i] = boxes[i - 1].Text;
-        //           }
-        //           string name = saveFileDialog1.FileName;
-        //           System.IO.File.WriteAllLines(name, contents);
-        //       }
-        //   }
-        public void button_save_Click(object sender, EventArgs e)
+        private void button_save_Click(object sender, EventArgs e)
         {
             DialogResult Result = saveFileDialog1.ShowDialog();
             if ((Result == DialogResult.OK) && (saveFileDialog1.FileName.Length > 0))
@@ -108,7 +162,7 @@ namespace Asc_Mats_Form
             }
         }
 
-        public void calc_cloth()
+        private void calc_cloth()
         {
             TextBox[] clothBoxes = new TextBox[] { this.i_cloth_asc, this.i_cloth_to, this.i_cloth_toc, this.i_cloth_tw, this.i_cloth_twc, this.i_cloth_tt, this.i_cloth_ttc };
             int[] clothBoxes_value = new int[] { v_cloth_asc, v_cloth_to, v_cloth_toc, v_cloth_tw, v_cloth_twc, v_cloth_tt, v_cloth_ttc };
@@ -136,7 +190,7 @@ namespace Asc_Mats_Form
             label_cloth_total.Text = formatAsGold(woolPrice + cottonPrice + linenPrice);
         }
 
-        public void calc_leather()
+        private void calc_leather()
         {
             TextBox[] leatherBoxes = new TextBox[] { this.i_leather_asc, this.i_leather_to, this.i_leather_toc, this.i_leather_tw, this.i_leather_twc, this.i_leather_tt, this.i_leather_ttc };
             int[] leatherBoxes_value = new int[] { v_leather_asc, v_leather_to, v_leather_toc, v_leather_tw, v_leather_twc, v_leather_tt, v_leather_ttc };
@@ -165,7 +219,7 @@ namespace Asc_Mats_Form
             label_leather_total.Text = formatAsGold(thinPrice + coarsePrice + ruggedPrice);
         }
 
-        public void calc_metal()
+        private void calc_metal()
         {
             int out_toc, out_twc;
             TextBox[] metalBoxes = new TextBox[] { this.i_metal_asc, this.i_metal_to, this.i_metal_toc, this.i_metal_twc, this.i_metal_tt, this.i_metal_ttc, this.i_metal_ao, this.i_metal_at };
@@ -177,10 +231,10 @@ namespace Asc_Mats_Form
 
             out_toc = (metalBoxes_value[0] * 20) - metalBoxes_value[2];
             checkNull(out_toc, out out_toc);
-            SetValue(out_toc, o_craft_iron);
+            o_craft_iron.Text = out_toc.ToString();
             out_twc = (metalBoxes_value[0] * 10) - metalBoxes_value[3];
             checkNull(out_twc, out out_twc);
-            SetValue(out_twc, o_craft_steel);
+            o_craft_steel.Text = out_twc.ToString();
             int iron = (out_toc * 3) + (out_twc * 3) - metalBoxes_value[1];
             checkNull(iron, out iron);
             SetValue(iron, o_metal_to);
@@ -208,7 +262,7 @@ namespace Asc_Mats_Form
             label_metal_total.Text = formatAsGold(ironPrice + coalPrice + platinumPrice + primordiumPrice);
         }
 
-        public void calc_wood()
+        private void calc_wood()
         {
             TextBox[] woodBoxes = new TextBox[] { this.i_wood_asc, this.i_wood_to, this.i_wood_toc, this.i_wood_tw, this.i_wood_twc, this.i_wood_tt, this.i_wood_ttc };
             int[] woodBoxes_value = new int[] { v_wood_asc, v_wood_to, v_wood_toc, v_wood_tw, v_wood_twc, v_wood_tt, v_wood_ttc };
@@ -237,7 +291,7 @@ namespace Asc_Mats_Form
             label_wood_total.Text = formatAsGold(softPrice + seasonedPrice + hardPrice);
         }
 
-        public string formatAsGold(int p)
+        private string formatAsGold(int p)
         {
             decimal gold;
             decimal silver;
@@ -245,14 +299,14 @@ namespace Asc_Mats_Form
             gold = Rounding.RoundDown(p / 10000, 0);
             silver = Rounding.RoundDown((p - (10000 * gold)) / 100, 0);
             copper = (p - (10000 * gold) - (100 * silver));
-            return gold.ToString() + "g " + silver.ToString() + "s " + copper.ToString() + "c";
+            return gold.ToString() + rm.GetString("gold", cul) + " " + silver.ToString() + rm.GetString("silver", cul) + " " + copper.ToString() + rm.GetString("copper", cul);
         }
 
-        public int getSellPrice(int id)
+        private int getSellPrice(int id)
         {
             var url = "https://api.guildwars2.com/v2/commerce/prices/" + id.ToString();
             var sellprice = _download_serialized_json_data<API>(url);
-            int sell = sellprice.sells["unit_price"];
+            int sell = sellprice.Sells["unit_price"];
             return sell;
         }
 
@@ -406,12 +460,16 @@ namespace Asc_Mats_Form
             this.label_storage.Location = new Point(this.pan_wood.Location.X, this.pan_wood.Location.Y + 25);
             this.label_storage.Text = "Storage";
             this.label_needed.Font = new Font("Microsoft Sans Serif", 9.25F, FontStyle.Bold);
-            this.label_needed.Location = new Point(this.pan_wood.Location.X, this.pan_wood.Location.Y + 210);
+            this.label_needed.Location = new Point(this.pan_wood.Location.X, this.pan_wood.Location.Y + 275);
             this.label_needed.Text = "Needed";
             createControlsWood();
             createControlsCloth();
             createControlsMetal();
             createControlsLeather();
+            this.panel_languages.Location = new Point(this.pan_wood.Location.X + 250, this.pan_wood.Location.Y + 380);
+            this.rad_german.Location = new Point(rad_english.Location.X, rad_english.Location.Y + rad_english.Height);
+            this.rad_french.Location = new Point(rad_german.Location.X, rad_german.Location.Y + rad_german.Height);
+            this.rad_spanish.Location = new Point(rad_french.Location.X, rad_french.Location.Y + rad_french.Height);
         }
 
         private void createControlsCloth()
@@ -432,6 +490,7 @@ namespace Asc_Mats_Form
             but_min_cloth.Text = "-";
             but_min_cloth.Click += new EventHandler(but_min_cloth_Click);
             createLabelFirst(label_i_cloth_to, label_i_cloth_asc);
+            label_i_cloth_to.Location = new Point(label_i_cloth_asc.Location.X, label_i_wood_to.Location.Y);
             createTextbox(i_cloth_to, label_i_cloth_to);
             createLabelFirst(label_i_cloth_toc, label_i_cloth_to);
             createTextbox(i_cloth_toc, label_i_cloth_toc);
@@ -475,6 +534,7 @@ namespace Asc_Mats_Form
             but_min_leather.Text = "-";
             but_min_leather.Click += new EventHandler(but_min_leather_Click);
             createLabelFirst(label_i_leather_to, label_i_leather_asc);
+            label_i_leather_to.Location = new Point(label_i_leather_asc.Location.X, label_i_wood_to.Location.Y);
             createTextbox(i_leather_to, label_i_leather_to);
             createLabelFirst(label_i_leather_toc, label_i_leather_to);
             createTextbox(i_leather_toc, label_i_leather_toc);
@@ -518,6 +578,7 @@ namespace Asc_Mats_Form
             but_min_metal.Text = "-";
             but_min_metal.Click += new EventHandler(but_min_metal_Click);
             createLabelFirst(label_i_metal_to, label_i_metal_asc);
+            label_i_metal_to.Location = new Point(label_i_metal_asc.Location.X, label_i_wood_to.Location.Y);
             createTextbox(i_metal_to, label_i_metal_to);
             createLabelFirst(label_i_metal_toc, label_i_metal_to);
             createTextbox(i_metal_toc, label_i_metal_toc);
@@ -559,6 +620,7 @@ namespace Asc_Mats_Form
         {
             createHeader(label_title_wood);
             createLabelFirst(label_i_wood_asc, label_storage);
+            label_i_wood_asc.Location = new Point(label_storage.Location.X, label_storage.Location.Y + label_storage.Height + 2);
             createTextbox(i_wood_asc, label_i_wood_asc);
             i_wood_asc.Enabled = true;
             i_wood_asc.TextChanged += new EventHandler(i_wood_asc_TextChanged);
@@ -572,6 +634,7 @@ namespace Asc_Mats_Form
             but_min_wood.Text = "-";
             but_min_wood.Click += new EventHandler(but_min_wood_Click);
             createLabelFirst(label_i_wood_to, label_i_wood_asc);
+            label_i_wood_to.Location = new Point(label_i_wood_asc.Location.X, label_i_wood_asc.Location.Y + label_i_wood_asc.Height + 10);
             createTextbox(i_wood_to, label_i_wood_to);
             createLabelFirst(label_i_wood_toc, label_i_wood_to);
             createTextbox(i_wood_toc, label_i_wood_toc);
@@ -584,6 +647,7 @@ namespace Asc_Mats_Form
             createLabelFirst(label_i_wood_ttc, label_i_wood_tt);
             createTextbox(i_wood_ttc, label_i_wood_ttc);
             createLabelFirst(label_o_wood_to, label_needed);
+            label_o_wood_to.Location = new Point(label_needed.Location.X, label_needed.Location.Y + label_needed.Height + 2);
             createLabelSecond(o_wood_to, label_o_wood_to);
             createLabelThird(label_o_wood_to_price, o_wood_to);
             createLabelFirst(label_o_wood_tw, label_o_wood_to);
@@ -598,6 +662,7 @@ namespace Asc_Mats_Form
 
         private void createHeader(Label active)
         {
+            active.MaximumSize = new Size(250, 0);
             createLabel(active);
             active.Font = header;
         }
@@ -607,11 +672,13 @@ namespace Asc_Mats_Form
             active.AutoSize = true;
         }
 
+        private static Size labelSecondStandard = new Size(50, textboxStandard.Height);
+
         private void createLabelFirst(Label active, Label parent)
         {
+            active.MaximumSize = new Size(120, 0);
             createLabel(active);
-            active.Location = new Point(parent.Location.X, parent.Location.Y + parent.Height + 7);
-            active.Size = labelFirstStandard;
+            active.Location = new Point(parent.Location.X, parent.Location.Y + 27);
         }
 
         private void createLabelSecond(Label active, Label parent)
@@ -624,7 +691,7 @@ namespace Asc_Mats_Form
         private void createLabelThird(Label active, Label parent)
         {
             createLabel(active);
-            active.Location = new Point(parent.Location.X + 40, parent.Location.Y);
+            active.Location = new Point(parent.Location.X + 50, parent.Location.Y);
             active.Size = labelSecondStandard;
         }
 
@@ -634,6 +701,8 @@ namespace Asc_Mats_Form
             active.Location = new Point(parent.Location.X - 10, parent.Location.Y - parent.Height - 10);
             active.Size = labelSecondStandard;
         }
+
+        private static Size textboxStandard = new Size(45, 20);
 
         private void createTextbox(TextBox active, Label parent)
         {
@@ -645,6 +714,29 @@ namespace Asc_Mats_Form
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            rm = new ResourceManager("AscendedMaterialsForm.AdditionalResources.Res", typeof(Form1).Assembly);
+
+            this.panel_languages.Controls.Add(rad_english);
+            this.panel_languages.Controls.Add(rad_german);
+            this.panel_languages.Controls.Add(rad_french);
+            this.panel_languages.Controls.Add(rad_spanish);
+            if (cul.ToString() == "de-DE")
+            {
+                rad_german.Checked = true;
+            }
+            else if (cul.ToString() == "en-US")
+            {
+                rad_english.Checked = true;
+            }
+            else if (cul.ToString() == "fr-FR")
+            {
+                rad_french.Checked = true;
+            }
+            else if (cul.ToString() == "es-SP")
+            {
+                rad_spanish.Checked = true;
+            }
+
             iiron = getSellPrice(19699);
             icoal = 16;
             iplatinum = getSellPrice(19702);
@@ -676,12 +768,7 @@ namespace Asc_Mats_Form
             List<TextBox> clothBoxes = new List<TextBox> { this.i_cloth_asc, this.i_cloth_to, this.i_cloth_toc, this.i_cloth_tw, this.i_cloth_twc, this.i_cloth_tt, this.i_cloth_ttc };
             List<TextBox> metalBoxes = new List<TextBox> { this.i_metal_asc, this.i_metal_to, this.i_metal_toc, this.i_metal_twc, this.i_metal_tt, this.i_metal_ttc, this.i_metal_ao, i_metal_at };
             List<TextBox> leatherBoxes = new List<TextBox> { this.i_leather_asc, this.i_leather_to, this.i_leather_toc, this.i_leather_tw, this.i_leather_twc, this.i_leather_tt, this.i_leather_ttc };
-            for (int i = 0; i < 11; i++)
-            {
-                wood.setLabel(woodLabels[i], i);
-                cloth.setLabel(clothLabels[i], i);
-                leather.setLabel(leatherLabels[i], i);
-            }
+            setLabels();
             woodLabels.ForEach(s =>
             {
                 this.pan_wood.Controls.Add(s);
@@ -698,13 +785,6 @@ namespace Asc_Mats_Form
             {
                 this.pan_cloth.Controls.Add(s);
             });
-            int c = 0;
-            for (int j = 6; j < 19; j++, c++)
-            {
-                metal.setLabel(metalLabels[j], c);
-            }
-            this.label_craft_iron.Text = this.label_i_metal_toc.Text + "s";
-            this.label_craft_steel.Text = this.label_i_metal_twc.Text + "s";
             metalLabels.ForEach(s =>
             {
                 this.pan_metal.Controls.Add(s);
@@ -758,28 +838,6 @@ namespace Asc_Mats_Form
             onChange(this.pan_metal);
         }
 
-        /// <summary>
-        /// Loads a .txt file.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        //private void button_load_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult Result = openFileDialog1.ShowDialog();
-        //    if (Result == DialogResult.OK)
-        //    {
-        //        string name = openFileDialog1.FileName;
-        //        string[] contents = new string[23];
-        //        TextBox[] boxes = { textBox_token, textBox_recipe_item, textBox_recipe_item1, textBox_recipe_item2, textBox_mats_item, textBox_mats_item1, textBox_mats_item2, textBox_mats_item3, textBox_runestones, textBox_skillpoint, textBox_honor, textBox_obsi, textBox_totem, textBox_dust, textBox_venom, textBox_blood, textBox_bone, textBox_scale, textBox_claws, textBox_fangs, textBox_ecto, textBox_clover };
-        //        contents = System.IO.File.ReadAllLines(name);
-        //        input = contents[0];
-        //        for (int i = 1; i < 23; i++)
-        //        {
-        //            boxes[i - 1].Text = contents[i];
-        //        }
-        //        comboBox_legy.SelectedItem = input;
-        //    }
-        //}
         private void i_wood_asc_TextChanged(object sender, EventArgs e)
         {
             onChange(this.pan_wood);
@@ -815,15 +873,17 @@ namespace Asc_Mats_Form
 
         private void SetValue(int x, Label y)
         {
-            y.Text = x.ToString();
+            if (x >= 250)
+            {
+                decimal s = Rounding.RoundDown(x / 250, 0);
+                decimal rest = x - (s * 250);
+                string text = s.ToString() + " : " + rest.ToString();
+                y.Text = text;
+            }
+            else
+            {
+                y.Text = x.ToString();
+            }
         }
-
-        /*
-                public int calc(int asc,int o,int f_asc,int f_uncraftet,int c_uncraftet,int c_craftet,int f_craftet)
-                {
-                    o = (asc * f_asc * f_uncraftet) - c_uncraftet - (c_craftet * f_craftet);
-                    return o;
-                }
-                */
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Asc_Mats_Form
+namespace AscendedMaterialsForm
 {
     internal static class Rounding
     {

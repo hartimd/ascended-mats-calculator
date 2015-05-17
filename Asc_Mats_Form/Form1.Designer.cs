@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
 
-namespace Asc_Mats_Form
+namespace AscendedMaterialsForm
 {
     partial class Form1
     {
@@ -159,8 +159,18 @@ namespace Asc_Mats_Form
             this.label_o_metal_ao_price = new Label();
             this.label_o_metal_at_price = new Label();
             this.label_metal_total = new Label();
+            this.rad_german = new RadioButton();
+            this.rad_english = new RadioButton();
+            this.rad_french = new RadioButton();
+            this.rad_spanish = new RadioButton();
+            this.panel_languages = new Panel();
+
 
             this.SuspendLayout();
+            this.rad_english.CheckedChanged += new System.EventHandler(this.rad_english_CheckedChanged);
+            this.rad_german.CheckedChanged += new System.EventHandler(this.rad_german_CheckedChanged);
+            this.rad_french.CheckedChanged += new System.EventHandler(this.rad_french_CheckedChanged);
+            this.rad_spanish.CheckedChanged += new System.EventHandler(this.rad_spanish_CheckedChanged);
             // 
             // button_calc
             // 
@@ -322,6 +332,11 @@ namespace Asc_Mats_Form
             this.Controls.Add(this.label_o_metal_ao_price);
             this.Controls.Add(this.label_o_metal_at_price);
             this.Controls.Add(this.label_metal_total);
+            this.Controls.Add(this.rad_german);
+            this.Controls.Add(this.rad_english);
+            this.Controls.Add(this.rad_french);
+            this.Controls.Add(this.rad_spanish);
+            this.Controls.Add(this.panel_languages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "Smoke\'s Ascended Mats Calculator";
@@ -329,6 +344,11 @@ namespace Asc_Mats_Form
             this.ResumeLayout(false);
 
         }
+        private Panel panel_languages;
+        private RadioButton rad_german;
+        private RadioButton rad_english;
+        private RadioButton rad_french;
+        private RadioButton rad_spanish;
         private Panel pan_wood;
         private Panel pan_cloth;
         private Panel pan_metal;

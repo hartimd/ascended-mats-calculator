@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Asc_Mats_Form
+namespace AscendedMaterialsForm
 {
     public class API
     {
@@ -10,28 +10,16 @@ namespace Asc_Mats_Form
             set;
         }
 
-        public Dictionary<string, int> buys
+        public Dictionary<string, int> Buys
         {
             get;
             set;
         }
 
-        public Dictionary<string, int> sells
+        public Dictionary<string, int> Sells
         {
             get;
             set;
         }
     }
 }
-
-//{
-//    "id": 19684,
-//    "buys": {
-//        "quantity": 145975,
-//        "unit_price": 7018
-//    },
-//    "sells": {
-//        "quantity": 126,
-//        "unit_price": 7019
-//    }
-//}

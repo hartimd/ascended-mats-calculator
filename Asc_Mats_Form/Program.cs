@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Asc_Mats_Form
+namespace AscendedMaterialsForm
 {
     internal static class Program
     {
