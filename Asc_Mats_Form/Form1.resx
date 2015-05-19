@@ -123,4 +123,13 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>153, 17</value>
   </metadata>
+  <data name="gold" xml:space="preserve">
+    <value>gold</value>
+  </data>
+  <data name="silver" xml:space="preserve">
+    <value>silver</value>
+  </data>
+  <data name="copper" xml:space="preserve">
+    <value>copper</value>
+  </data>
 </root>

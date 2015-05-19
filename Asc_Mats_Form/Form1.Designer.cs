@@ -1,5 +1,6 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
+﻿using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace AscendedMaterialsForm
 {
@@ -8,7 +9,7 @@ namespace AscendedMaterialsForm
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -167,31 +168,27 @@ namespace AscendedMaterialsForm
 
 
             this.SuspendLayout();
-            this.rad_english.CheckedChanged += new System.EventHandler(this.rad_english_CheckedChanged);
-            this.rad_german.CheckedChanged += new System.EventHandler(this.rad_german_CheckedChanged);
-            this.rad_french.CheckedChanged += new System.EventHandler(this.rad_french_CheckedChanged);
-            this.rad_spanish.CheckedChanged += new System.EventHandler(this.rad_spanish_CheckedChanged);
+            this.rad_english.CheckedChanged += new EventHandler(this.rad_english_CheckedChanged);
+            this.rad_german.CheckedChanged += new EventHandler(this.rad_german_CheckedChanged);
+            this.rad_french.CheckedChanged += new EventHandler(this.rad_french_CheckedChanged);
+            this.rad_spanish.CheckedChanged += new EventHandler(this.rad_spanish_CheckedChanged);
             // 
             // button_calc
             // 
             this.button_calc.Height = 48;
-            this.button_calc.Text = "Calc";
-            this.button_calc.Click += new System.EventHandler(this.button_calc_Click);
+            this.button_calc.Click += new EventHandler(this.button_calc_Click);
             // 
             // button_reset
             // 
-            this.button_reset.Text = "Reset";
-            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
+            this.button_reset.Click += new EventHandler(this.button_reset_Click);
             // 
             // button_save
             // 
-            this.button_save.Text = "Save";
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            this.button_save.Click += new EventHandler(this.button_save_Click);
             // 
             // button_load
             // 
-            this.button_load.Text = "Load";
-            this.button_load.Click += new System.EventHandler(this.button_load_Click);
+            this.button_load.Click += new EventHandler(this.button_load_Click);
             // 
             // saveFileDialog1
             // 
@@ -337,10 +334,10 @@ namespace AscendedMaterialsForm
             this.Controls.Add(this.rad_french);
             this.Controls.Add(this.rad_spanish);
             this.Controls.Add(this.panel_languages);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "Smoke\'s Ascended Mats Calculator";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }

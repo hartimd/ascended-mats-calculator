@@ -26,3 +26,4 @@ C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\AscendedMaterialsForm.
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\AscendedMaterialsForm.application
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\AscendedMaterialsForm.exe
 C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\AscendedMaterialsForm.pdb
+C:\Meins\Coding\Cpp\Asc_Mats_Form\Asc_Mats_Form\obj\Debug\Asc_Mats_Form.csprojResolveAssemblyReference.cache

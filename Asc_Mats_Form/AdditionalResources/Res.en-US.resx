@@ -222,6 +222,9 @@
   <data name="needed" xml:space="preserve">
     <value>Needed</value>
   </data>
+  <data name="reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
   <data name="save" xml:space="preserve">
     <value>Save</value>
   </data>

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AscendedMaterialsForm.exe" size="412584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AscendedMaterialsForm.exe" size="409512">
       <assemblyIdentity name="AscendedMaterialsForm" version="2.1.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/LdFFXoDLVHWlwlECnTcu194hJ9qx45uoMJa4Zrq88M=</dsig:DigestValue>
+        <dsig:DigestValue>ws68/KPjqGiTAbLd81gLq3o0DaphonDGx9l0y86Ecrc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
